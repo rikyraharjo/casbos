@@ -44,7 +44,7 @@ function playNotifSound() {
 function SidebarContent({ onClose, pendingCount }) {
   const { signOut, profile, tenant } = useAuthStore()
   const isOwner = profile?.role === 'owner'
-  const { theme, toggleTheme } = useThemeStore()
+  const { theme, isAuto, toggleTheme } = useThemeStore()
   const navigate = useNavigate()
 
   const handleSignOut = async () => {
@@ -117,8 +117,8 @@ function SidebarContent({ onClose, pendingCount }) {
           onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--c-text-2)' }}
         >
           {theme === 'dark'
-            ? <><Sun size={14} /><span>Light mode</span></>
-            : <><Moon size={14} /><span>Dark mode</span></>
+            ? <><Sun size={14} /><span>Light mode</span>{isAuto && <span className="text-xs ml-auto" style={{ color: 'var(--c-text-3)' }}>Auto</span>}</>
+            : <><Moon size={14} /><span>Dark mode</span>{isAuto && <span className="text-xs ml-auto" style={{ color: 'var(--c-text-3)' }}>Auto</span>}</>
           }
         </button>
 

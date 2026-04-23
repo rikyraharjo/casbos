@@ -1,0 +1,78 @@
+@theme {
+  --color-brand: #3ecf8e;
+}
+
+/* ── Light Theme (default) ── */
+:root {
+  --c-bg:             #f5f5f5;
+  --c-surface:        #ffffff;
+  --c-surface-hover:  #f8f9fa;
+  --c-overlay:        #f0f0f0;
+  --c-border:         #e2e2e2;
+  --c-border-subtle:  #eeeeee;
+  --c-text:           #171717;
+  --c-text-2:         #6b6b6b;
+  --c-text-3:         #a3a3a3;
+  --c-brand:          #3ecf8e;
+  --c-brand-hover:    #2bb37a;
+  --c-brand-muted:    rgba(62, 207, 142, 0.12);
+  --c-brand-text:     #000000;
+  --c-danger-muted:   rgba(239, 68, 68, 0.08);
+  --c-danger-border:  rgba(239, 68, 68, 0.2);
+  --c-danger-text:    #dc2626;
+  --c-scrollbar:      #d1d5db;
+  --c-shadow:         rgba(0, 0, 0, 0.08);
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+  --c-bg:             #141414;
+  --c-surface:        #1c1c1c;
+  --c-surface-hover:  #242424;
+  --c-overlay:        #242424;
+  --c-border:         #2e2e2e;
+  --c-border-subtle:  #242424;
+  --c-text:           #ededed;
+  --c-text-2:         #888888;
+  --c-text-3:         #555555;
+  --c-brand:          #3ecf8e;
+  --c-brand-hover:    #2bb37a;
+  --c-brand-muted:    rgba(62, 207, 142, 0.12);
+  --c-brand-text:     #000000;
+  --c-danger-muted:   rgba(239, 68, 68, 0.08);
+  --c-danger-border:  rgba(239, 68, 68, 0.2);
+  --c-danger-text:    #f87171;
+  --c-scrollbar:      #3a3a3a;
+  --c-shadow:         rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--c-text-3);
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-scrollbar); border-radius: 99px; }
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; }
